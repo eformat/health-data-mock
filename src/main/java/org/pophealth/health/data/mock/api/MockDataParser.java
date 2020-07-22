@@ -1,5 +1,6 @@
 package org.pophealth.health.data.mock.api;
 
+import io.netty.util.internal.StringUtil;
 import io.vertx.core.logging.Logger;
 import io.vertx.core.logging.LoggerFactory;
 import java.io.File;
@@ -69,25 +70,25 @@ public class MockDataParser {
             String heartRate = csvRecord.get("Heard Rate BPM");
 
             HealthData data = new HealthData();
-            if(steps!=null) {
+            if(!StringUtil.isNullOrEmpty(steps)) {
                 data.setSteps(Integer.parseInt(steps));
             }
-            if(activeMinutes!=null) {
+            if(!StringUtil.isNullOrEmpty(activeMinutes)) {
                 data.setActiveMinutes(Integer.parseInt(activeMinutes));
             }
-            if(age!=null){
+            if(!StringUtil.isNullOrEmpty(age)){
                 data.setAge(Integer.parseInt(age));
             }
-            if(sleepRpms!=null) {
+            if(!StringUtil.isNullOrEmpty(sleepRpms)) {
                 data.setSleepRpms(Double.parseDouble(sleepRpms));
             }
-            if(sleepHours!=null) {
+            if(!StringUtil.isNullOrEmpty(sleepHours)) {
                 data.setSleepHours(Double.parseDouble(sleepHours));
             }
-            if(sleepAvgRpms!=null){
+            if(!StringUtil.isNullOrEmpty(sleepAvgRpms)){
                 data.setSleepAvgRpms(Double.parseDouble(sleepAvgRpms));
             }
-            if(heartRate!=null){
+            if(!StringUtil.isNullOrEmpty(heartRate)){
                 data.setHeartRateBpm(Double.parseDouble(heartRate));
             }
             healthData.add(data);
