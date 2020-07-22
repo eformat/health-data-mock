@@ -1,4 +1,4 @@
-package org.pophealth.client;
+package org.pophealth.health.data.mock;
 
 import io.quarkus.test.junit.NativeImageTest;
 
